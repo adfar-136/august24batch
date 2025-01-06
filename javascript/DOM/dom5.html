@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="./download.jpeg" alt="cat text">
+    <button onclick="fun()">Hide</button>
+    <script>
+        let ele = document.getElementById("img");
+        let srcAtt = ele.getAttribute("src")
+        console.log(srcAtt);
+        ele.setAttribute("src", "https://picsum.photos/200/300");
+        ele.setAttribute("class","main")
+        console.log(ele.getAttribute("class"));
+        console.log(ele.hasAttribute("title"))
+        function fun(){
+            ele.removeAttribute("src")
+        }
+    </script>
+</body>
+</html>

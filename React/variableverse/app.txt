@@ -1,0 +1,595 @@
+import About from "./components/About"
+import Blog from "./components/Blog";
+import Contact from "./components/Contact"
+function App() {
+  let fName = "Adfar"
+  return (
+    <>
+      <h1>AdfaR Rasheed</h1>
+      <About/>
+      <Blog>
+        <h2>Blog</h2> 
+        <p>This is a blog</p>
+        
+      </Blog>
+      <Contact firstName={fName} secondName="Rasheed" age="24"/>
+    </>  
+  );
+}
+
+export default App;
+
+
+import React from 'react'
+
+function App() {
+  let data =[
+    ["Name","Age","Salary"],
+    ["Adfar","26","4000"],
+    ["Amit","22","10000"],
+    ["Amitabh","22","100"],
+  ]
+  return (
+    <div>
+      <h1>My First React App</h1>
+      <ul>
+        {data.map((item,index)=>{
+            return item.map((x,y)=>{
+              return <li key={}>{x}</li>
+            })
+        })}
+      </ul>
+    </div>
+  )
+}
+
+export default App
+
+import React from 'react'
+
+function App() {
+  var data = [
+    ["id","name","age"],
+    { id: 1, name: 'John', age: 25 },
+    {id:2,name:'Adfar',age:26},
+    {id:3,name:'Rahul',age:27}
+  ]
+  return (
+    <div>
+      <table>
+        <tr>
+          <th>{data[0][0]}</th>
+          <th>{data[0][1]}</th>
+          <th>{data[0][2]}</th>
+        </tr>
+        {data.slice(1).map((item,index)=>{
+          return <tr key={}>
+            <td>{item.id}</td>
+            <td>{item.name}</td>
+            <td>{item.age}</td>
+          </tr>
+        })}
+      </table>
+    </div>
+  )
+}
+
+export default App
+
+
+import React from 'react'
+
+function App() {
+  let data =["HTML","CSS","JS","React","HTML"]
+  return (
+    <div>
+      <h1>My First React App</h1>
+      <ul>
+        {data.map((item,index)=>{
+            return <li key={index}>{item}</li>
+        })}
+      </ul>
+    </div>
+  )
+}
+
+export default App
+
+import React from 'react'
+import Blog from './components/Blog'
+
+function App() {
+  return (
+    <div>
+      <Blog obj={{id:1,name:"adfar"}} fName ="Rasheed" skills ={["HTML","CSS","JS","REACT"]} age={26}/>
+    </div>
+  )
+}
+
+export default App
+
+import React, { useState } from 'react'
+
+export default function App() {
+  // var count =0;
+  // function handleIncrement(){
+  //   count=count+1;
+  //   console.log(count)
+  // }
+  console.log("Adfar")
+  const [count,setCount] = useState(0);
+  const [text,setText] = useState("Adfar")
+  function handleIncrement(){
+    setCount(count+1)
+  }
+  return (
+    <div>
+      <h1>Hello, world!</h1>
+      <h1>count : {count}</h1>
+      <h1>Name : {text}</h1>
+      <button onClick={()=>setText("rASHEED")}>Change</button>
+      <button onClick={handleIncrement}>Increment</button>
+    </div>
+  )
+}
+
+
+import React, { useState } from 'react'
+import "./theme.css"
+function Themechanger() {
+    const [cname,setCname] = useState('light');
+    const [text,setText] = useState("Dark")
+    function handleClick(){
+        if(cname==="light"){
+            setCname('dark');
+            setText('Light');
+        }else {
+            setCname('light');
+            setText('Dark');
+        }
+    }
+  return (
+    <div className={cname}>
+        <button onClick={handleClick}>{text} Mode</button>
+    </div>
+  )
+}
+
+export default Themechanger
+
+
+import React, { useState } from 'react'
+import "./theme.css"
+function Themechanger() {
+    const [bgcolor,setBgcolor] = useState('white');
+    const [color,setColor] = useState("black")
+    const [text,setText] = useState("Dark")
+    function handleClick(){
+        if(bgcolor==="white"){
+            setBgcolor('black');
+            setText("Light");
+            setColor("white");
+        } else {
+            setBgcolor('white');
+            setText("Dark");
+            setColor("black");
+        }
+    }
+  return (
+    <div style={{backgroundColor:bgcolor}}>
+        <button onClick={handleClick}>{text} Mode</button>
+        <h1 style={{color:color}}>Adfar Rasheed</h1>
+    </div>
+  )
+}
+
+export default Themechanger
+
+
+import React, { useState } from 'react'
+
+function App() {
+ var [condition,setCondition] = useState(true)
+  return (
+    <div>
+      <h1>Hello, World!</h1>
+      <nav>
+        <button onClick={()=>setCondition(true)}>Adfar Component</button>
+        <button onClick={()=>setCondition(false)}>Sumeet Component</button>
+      </nav>
+      {/* {condition ? <Adfar/> : <Sumeet/>} */}
+      {condition && <Adfar/>}
+      {!condition && <Sumeet/>}
+    </div>
+  )
+}
+function Adfar(){
+  return (
+    <div>
+      <h1>ADfar Component</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab totam sequi quibusdam. Rem assumenda minus odit a doloremque minima sunt iste aliquid necessitatibus, impedit accusamus incidunt dolorum, aperiam eum unde fugiat quis iusto provident id ratione architecto. Deleniti excepturi sunt dolorem possimus sapiente exercitationem perspiciatis deserunt ullam saepe nisi. Debitis rerum voluptas quos quam impedit architecto ex eveniet unde. Explicabo deleniti rerum eaque laboriosam ipsa, ex, accusantium nemo tempore iste aliquam numquam doloremque eum sed delectus excepturi quidem ratione qui autem atque nulla quia fugiat exercitationem! Dolorum omnis non ab! Perspiciatis reprehenderit beatae doloribus dicta non est cumque hic sed.</p>
+    </div>
+  )
+}
+function Sumeet(){
+  return (
+    <div>
+      <h1>Sumeet Component</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab totam sequi quibusdam. Rem assumenda minus odit a doloremque minima sunt iste aliquid necessitatibus, impedit accusamus incidunt dolorum, aperiam eum unde fugiat quis iusto provident id ratione architecto. Deleniti excepturi sunt dolorem possimus sapiente exercitationem perspiciatis deserunt ullam saepe nisi. Debitis rerum voluptas quos quam impedit architecto ex eveniet unde. Explicabo deleniti rerum eaque laboriosam ipsa, ex, accusantium nemo tempore iste aliquam numquam doloremque eum sed delectus excepturi quidem ratione qui autem atque nulla quia fugiat exercitationem! Dolorum omnis non ab! Perspiciatis reprehenderit beatae doloribus dicta non est cumque hic sed.</p>
+    </div>
+  )
+}
+export default App
+
+
+import React, { useState } from 'react'
+
+export default function App() {
+  const [username,setUsername] = useState("")
+  const [pass,setPass] = useState("")
+  const [condition,setConditon ] = useState(false)
+  function handleForm(e){
+    e.preventDefault()
+    setConditon(true)
+  }
+  return (
+    <div>
+      <form onSubmit={handleForm}>
+        <input type="text"
+         placeholder='Enter username' 
+         value={username}
+         onChange={(event)=>setUsername(event.target.value)}/>
+        <input type="pass" 
+        placeholder='Enter Password' 
+        value={pass}
+        onChange={(e)=>setPass(e.target.value)}/>
+        <button>Login</button>
+        {condition && (
+          <>
+           <h1>I am {username} and my password is {pass}</h1>
+          </>
+        )}
+      </form>
+    </div>
+  )
+}
+
+
+import React, { useState } from 'react'
+
+export default function App() {
+  const [data,setData] = useState({
+    username:"",
+    email:"",
+    pass:""
+  })
+  const [condition,setConditon ] = useState(false)
+  function handleForm(e){
+    e.preventDefault()
+    setConditon(true)
+  }
+  return (
+    <div>
+      <form onSubmit={handleForm}>
+        <input type="text"
+         placeholder='Enter username' 
+         value={data.username}
+         onChange={(event)=>{setData((prev)=>({...prev,username:event.target.value}))}}/>
+         <input type="email" placeholder='Enter email'
+         value={data.email}
+         onChange={(e)=>{setData((prev)=>({...prev,email:e.target.value}))}}/>
+        <input type="pass" 
+        placeholder='Enter Password' 
+        value={data.pass}
+        onChange={(e)=>{setData((prev)=>({...prev,pass:e.target.value}))}}/>
+        <button>Login</button>
+        {condition && (
+          <>
+           <h1>I {data.email} am {data.username} and my password is {data.pass}</h1>
+          </>
+        )}
+      </form>
+    </div>
+  )
+}
+
+
+import React, { useEffect, useState } from 'react'
+
+export default function App() {
+  const [count,setCount] = useState(0)
+  const [number,setNumber] = useState(1000)
+  useEffect(()=>{
+    let fun = ()=>{
+      console.log("Please subscribe")
+    }
+    // document.addEventListener("click",fun)
+    // return ()=>{
+    //   document.removeEventListener("click",fun)
+    // }
+    let interval =setInterval(fun,3000)
+    return ()=>{
+       clearInterval(interval)
+    }
+  },[count,number])
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={()=>setCount(count+1)}> +++++</button>
+      <h1>{number}</h1>
+      <button onClick={()=>setNumber(number-1)}>-----</button>
+    </div>
+  )
+}
+
+
+import React, { useEffect, useState } from 'react'
+
+export default function App() {
+  const [data,setData] = useState({})
+  function generateJoke(){
+   let data =  fetch("https://official-joke-api.appspot.com/random_joke")
+   data.then((result)=>{
+     return result.json()
+   }).then((response)=>{
+       setData(response)
+   })
+  }
+  useEffect(()=>{
+    generateJoke()
+  },[])
+  return (
+    <div>
+      <h1>setUp : {data.setup}</h1>
+      <h1>punchline : {data.punchline}</h1>
+      <button onClick={generateJoke}>Generate Jokes</button>
+    </div>
+  )
+}
+
+
+//react router dom code 
+import React from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import Home from './Routing/Home'
+import About from './Routing/About'
+import Contact from './Routing/Contact'
+import Help from './Routing/Help'
+import Users from './Routing/Users'
+import UseDetails from './Routing/UseDetails'
+import Phone from './Routing/Phone'
+import MainHome from './Routing/MainHome'
+
+
+export default function App() {
+  var a =true;
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<MainHome/>}>
+              <Route index element={<Home/>}/>
+              <Route path='/about' element={<About/>}/>
+              <Route path='/contact' element={<Contact/>}>
+                   <Route path='shop' element={<h1>I am contact shop component</h1>}/>
+                   <Route path='blog' element={<h1>I am contact blog component</h1>}/>
+              </Route>
+              <Route path='/help' element={<Help/>}/>
+              <Route path='/users' element={<Users/>}/>
+              <Route path='/users/:id' element={<UseDetails/>}/>
+              <Route path='/users/:id/adhaar/:ph' element={<Phone/>}/>
+              <Route path='/profile' element={a?<Navigate to="/about"/>:<Navigate to="/contact"/>}/>
+         </Route>
+
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
+
+import React, { createContext } from 'react'
+import Compo1 from './Context/Compo1'
+let firstName = createContext()
+let lastName = createContext()
+
+export default function App() {
+  return (
+    <div>
+      <h1>I am App component</h1>
+      <firstName.Provider value="Adfar">
+        <lastName.Provider value="Rashid">
+            <Compo1/>
+        </lastName.Provider>
+      </firstName.Provider>
+    </div>
+  )
+}
+export {firstName,lastName}
+
+
+
+import React, { useState } from 'react'
+import Memo from './components/efficiency/Memo'
+
+export default function App() {
+  const [number,setNumber] = useState(1000)
+  console.log("Parent called")
+  return (
+    <div>
+      <Memo fName = "Adfar" age ={25}/>
+      <h1>Number : {number}</h1>
+      <button onClick={() => setNumber(number + 1)}>Increment number</button>
+    </div>
+  )
+}
+
+
+import React, { useMemo, useState } from 'react'
+import Memo from './components/efficiency/Memo';
+
+export default function App() {
+  const [count,setCount] =useState(0)
+  // const [number,setNummber] = useState(1000)
+  // const isOdd = useMemo(()=>{
+  //   let i = 0;
+  //   while(i< 2000000000) i++;
+  //   return count%2 !== 0
+  // },[count])
+  console.log("Parent Called");
+ const greet = ()=>{
+  console.log("r")
+ }
+  return (
+    <div>
+      <Memo/>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment count</button>
+      <button onClick={() => setCount(count - 1)}>Decrement count</button>
+      {/* <h1>{isOdd?"Odd Number":"Even Number"}</h1>
+      <h1>Number: {number}</h1>
+      <button onClick={() => setNummber(number + 1)}>Increment number</button>
+      <button onClick={() => setNummber(number - 1)}>Decrement number</button> */}
+    </div>
+  )
+}
+
+import React, { useCallback, useState } from 'react'
+let x =new Set()
+export default function App() {
+  const [count,setCount] = useState(0)
+  const [number,setNumber] = useState(1000)
+  const handleIncrementCount=useCallback(
+    ()=>{
+      setCount(count+1)
+    }
+  ,[count])
+  const handleDecrementCount=useCallback(
+    ()=>{
+      setCount(count-1)
+    },[count]
+  )
+  const handleIncrementNumber= useCallback(
+    ()=>{
+      setNumber(number+1)  
+      },[number]
+  )
+  const handleDecrementNumber=useCallback(
+    ()=>{
+      setNumber(number-1)  
+  
+    },[number]
+  )
+  x.add(handleDecrementCount)
+  x.add(handleDecrementNumber)
+  x.add(handleIncrementCount)
+  x.add(handleIncrementNumber)
+  alert(x.size)
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <p>Number: {number}</p>
+      <button onClick={handleIncrementCount}>Increment</button>
+      <button onClick={handleDecrementCount}>Decrement</button>
+      <button onClick={handleIncrementNumber}>Increment Number</button>
+      <button onClick={handleDecrementNumber}>Decrement Number</button>
+    </div>
+  )
+}
+
+
+import React, { lazy, Suspense } from 'react'
+import Component1 from './components/efficiency/lazy/Component1'
+const Component2 = lazy(()=>import("./components/efficiency/lazy/Component2"))
+const Component3 = lazy(()=>import("./components/efficiency/lazy/Component3"))
+export default function App() {
+  return (
+    <div>
+      <Component1/>
+      <Suspense fallback={<h1>Please wait ....</h1>}>
+        <Component2/>
+      </Suspense>
+      <Suspense fallback = {<h1>Sabar Rakho...</h1>}>
+        <Component3/>
+      </Suspense>
+    </div>
+  )
+}
+
+
+import React from 'react'
+import Counter from './Counter'
+import Errorboundary from './components/efficiency/ErrorBoundary/Errorboundary'
+
+export default function App() {
+  return (
+    <div>
+      <Errorboundary>
+        <Counter/>
+        <Counter/>
+      </Errorboundary>
+      <Errorboundary>
+        
+      </Errorboundary>
+      <Counter/>
+
+
+      <h1>Adfar Rasheed</h1>
+    </div>
+  )
+}
+
+
+import React, { useState } from 'react'
+import Modal from './Modal'
+
+export default function App() {
+  const [isModalOpen,setIsModalOpen] = useState(false)
+  function toggleModal(){
+    setIsModalOpen(!isModalOpen)
+  }
+  return (
+    <div>
+      <h1>React Portal Example</h1>
+      <button onClick={toggleModal}>Open Modal</button>
+      <Modal isOpen={isModalOpen} onClose={toggleModal}>
+           <h1>I am a Modal Component</h1>
+      </Modal>
+    </div>
+  )
+}
+
+
+import React from 'react'
+import withAuthenticated from './WithAuthenticated'
+import Profile from './Profile'
+const Dashboard = ()=>{
+  return <h1>Welcome to your dashboad</h1>
+}
+const Hoc = withAuthenticated(Dashboard)
+export default function App() {
+  const isLogged = true;
+  return (
+    <div>
+      <Hoc isAuthenticated={isLogged}/>
+      <Profile isAuthenticated={isLogged}/>
+    </div>
+  )
+}
+
+
+import React from 'react'
+import Counterrr from './Reduxstore/Counterrr'
+import { useDispatch, useSelector } from 'react-redux'
+import { setBgColor } from './Reduxstore/action'
+export default function App() {
+  const bgColor = useSelector((state)=>state.color.backgroundColor)
+  const dispatch = useDispatch()
+  return (
+    <div style={{backgroundColor:bgColor}}>
+      <Counterrr/>
+      <button onClick={()=>dispatch(setBgColor("blue"))}>Blue</button>
+      <button onClick={()=>dispatch(setBgColor("green"))}>Green</button>
+      <button onClick={()=>dispatch(setBgColor("yellow"))}>Yellow</button>
+    </div>
+  )
+}

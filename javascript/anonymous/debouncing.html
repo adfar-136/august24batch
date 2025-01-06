@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" 
+    placeholder="enter something">
+    <div id="output">
+
+    </div>
+    <script>
+        let timer;
+        document.getElementById("input").addEventListener("keydown",()=>{
+            clearTimeout(timer)
+            timer = setTimeout(function(){
+                let inputValue = document.getElementById("input").value;
+                document.getElementById("output").innerText = inputValue;
+                console.log("fsgdf");
+            },500)
+        })
+    </script>
+</body>
+</html>

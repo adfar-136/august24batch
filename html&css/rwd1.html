@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        header{
+            background-color: #efd450;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        header > nav{
+            display: flex;
+            gap: 20px;
+
+        }
+        li{
+            list-style: none;
+            background-color: cadetblue;
+            padding: 5px 20px;
+            border-radius: 20px;
+            
+        }
+        li > a{
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        @media screen and (orientation:landscape){
+            
+        }
+        @media screen and (max-width:500px){
+           header >  nav{
+            flex-direction: column;
+            }
+            li > a{
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+        </nav>
+    </header>
+</body>
+</html>

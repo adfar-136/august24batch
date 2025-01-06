@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="uname">Enter Username :</label>
+        <input type="text" minlength="10" maxlength="20" placeholder="Enter Username" id="uname"/><br>
+        <label for="age">Enter Age: </label>
+        <input type="number" min="1" max="100" placeholder="Enter Age" id="age" required><br>
+        <label for="pass">Enter Password:</label>
+        <input type="password" minlength="6" placeholder="Enter Password" id="pass" required>
+        <br>
+        <label for="">Select Skills</label>
+        <!-- <input type="range"> -->
+        <input type="Checkbox" name="skill" value="HTML">HTML 
+        <input type="Checkbox"  name="skill" value="CSS">CSS 
+        <input type="Checkbox" name="skill" value="JS">JS 
+        <input type="Checkbox" name="skill" value="Node">NOde 
+        <input type="Checkbox" name="skill" value="Express">Express <br>
+        <select name="skills">
+          <option value="hyper" >HTML</option>
+          <option value="cascading">CSS</option>
+          <option value="" selected>JS</option>
+          <option value="">React</option>
+        </select><br>
+        <label for="">Select your skill</label>
+        <input list="skillss">
+        <datalist id="skillss">
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+            <option value="REact">React</option>
+        </datalist>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br>
+        <input type="button" value="login">
+       
+        <!-- <input type="email"> -->
+        <!-- <input type="file">
+        <input type="date">
+        <input type="color">
+        <input type="reset"> -->
+        <!-- <label for="">Select GEnder:</label>
+        <input type="Radio" name="gender"
+        value="M">Male 
+        <input type="Radio" name="gender" value="F">Female 
+        <input type="Radio" name="gender" value="O">Other <br> -->
+        <button>Submit</button>
+    </form>
+</body>
+</html>

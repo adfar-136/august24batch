@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <p id="child">This is a first element</p>
+        <p id="second">This is a second element</p>
+        <main>
+            <p>dgfhd</p>
+        </main>
+        <p id="third">This is a third element</p>
+    </div>
+    <ul id="list">
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+    <script>
+        let celement = document.getElementById("child")
+        let pelement = celement.parentNode;
+        console.log(pelement);
+        console.log(pelement.firstElementChild);
+        console.log(pelement.lastElementChild);
+        let list = document.getElementById("list");
+        let listitem = pelement.children;
+        console.log(listitem);
+        let second = document.getElementById("second");
+        let next  = second.nextElementSibling;
+        let previous = second.previousElementSibling
+        console.log(next);
+        console.log(previous);
+
+
+    </script>
+</body>
+</html>

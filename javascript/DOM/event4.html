@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="input">
+        <script>
+            var input = document.getElementById("input")
+           /* input.addEventListener("change", function(){
+                console.log(event.target.value);
+            })*/
+            input.addEventListener("focus",()=>{
+                input.style.backgroundColor="pink"
+            })
+            input.addEventListener("blur",()=>{
+                input.style.backgroundColor="red"
+            })
+            window.addEventListener('resize',()=>{
+                console.log("window resized");
+                console.log(`Window Width : ${window.innerWidth}
+                Window Height : ${window.innerHeight}`);
+            })
+        </script>
+    </form>
+</body>
+</html>

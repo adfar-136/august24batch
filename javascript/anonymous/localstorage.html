@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="username" id="username">
+        <input type="text" placeholder="email" id="email">
+        <button id="btn" type="submit">Login</button>
+        <button id="logout">Logout</button>
+       
+        <div id="data"></div>
+    </form>
+    <button id="profile"> Read Data</button>
+    <script>
+        let userName = document.getElementById("username");
+        let email = document.getElementById("email");
+       let element = document.getElementById("data")
+       document.getElementById("profile").addEventListener("click",()=>{
+        let data = JSON.parse(localStorage.getItem("data"))
+        element.innerHTML = `<h1>Username : ${data.username}</h1>
+        <h2>EMail : ${data.email}</h2>`
+       })
+        document.getElementById("btn").addEventListener("click",(e)=>{
+            e.preventDefault()
+            localStorage.setItem("data",JSON.stringify({username:userName.value,email:email.value}))
+            
+
+        })
+        document.getElementById("logout").addEventListener("click",()=>{
+          /*  localStorage.removeItem("username")
+            localStorage.removeItem("email")*/
+            localStorage.clear()
+        })
+    </script>
+</body>
+</html>

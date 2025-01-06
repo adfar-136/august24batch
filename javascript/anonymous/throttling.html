@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input"
+    placeholder="Enter Something">
+    <div id="output"></div>
+    <script>
+        let lastExecutionTime = 0;
+        let throttlingDelay = 2000;
+        document.getElementById("input").addEventListener("keydown",()=>{
+            let currentNow = Date.now();
+            if(currentNow -lastExecutionTime > throttlingDelay){
+                let inputValue = document.getElementById("input").value;
+                document.getElementById("output").innerText = inputValue;
+                console.log(currentNow);
+                lastExecutionTime = currentNow;
+            }
+        })
+    </script>
+</body>
+</html>

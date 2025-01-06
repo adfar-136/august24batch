@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOm Manipulations</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <button onclick="fun()">Generate Para</button>
+    <script>
+        let ele = document.getElementById("container")
+       function fun(){
+            let newPara = document.createElement("p")
+            newPara.textContent ="This is a new Para"
+            ele.appendChild(newPara)
+       }
+    </script>
+</body>
+</html>

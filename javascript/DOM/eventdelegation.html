@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>
+    </ul>
+    <script>
+        var list = document.getElementById("list");
+        list.addEventListener('click',function(event){
+            console.log(event.target.tagName);
+            if(event.target.tagName === 'LI'){
+              alert(`you have clicked : ${event.target.textContent}`)
+            }
+        })
+    </script>
+</body>
+</html>

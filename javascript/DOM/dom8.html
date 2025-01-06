@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li id="item1">Item1</li>
+        <li>Item2</li>
+        <li id="item4">Item4</li>
+    </ul>
+    <button onclick="fun()">Remove Child</button>
+    <button onclick="fun1()">Click</button>
+    <script>
+         function fun1(){
+            var list = document.getElementById("list");
+            let h1 = document.createElement('h1')
+            h1.textContent="Variable Verse";
+            let item1 = document.getElementById("item1")
+           // list.replaceChild(h1,item1)
+            list.replaceChildren(h1,item1)
+         }
+        var list = document.getElementById("list");
+        console.log(list.firstChild);
+        let li = document.createElement("li")
+        li.textContent = "Item3";
+        let item4 = document.getElementById("item4")
+        list.insertBefore(li,item4)
+        function fun(){
+            if(list.hasChildNodes){
+                list.removeChild(list.firstChild);
+            }
+        }
+    </script>
+</body>
+</html>

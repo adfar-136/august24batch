@@ -1,0 +1,12 @@
+.heading1{
+    background-color: aqua;
+    padding: 30px;
+    border-radius: 20px;
+}
+.para1{
+    font-size: 20px;
+    background-color: red;
+}
+#main{
+    background-color: red;
+}
