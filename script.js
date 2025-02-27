@@ -24,8 +24,7 @@ function fetchUserInfo(username){
      if(username){
          fetchUserInfo(username)
          fetchUserRepos(username,1)
-    
-     }
+    }
  })
  function fetchUserRepos(username, page) {
     fetch(`https://api.github.com/users/${username}/repos?per_page=5&page=${page}`)
